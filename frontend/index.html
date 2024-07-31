@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup and Login with OTP</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="home" class="hidden">
+      <h2>Home</h2>
+      <p id="user-info"></p>
+      <button onclick="logout()">Logout</button>
+     
+    </div>
+
+    <div id="forms">
+      <h2>Signup</h2>
+      <form id="signup-form">
+        <input type="text" id="signup-name" placeholder="Name" required />
+        <input type="email" id="signup-email" placeholder="Email" required />
+        <input
+          type="password"
+          id="signup-password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Signup</button>
+      </form>
+      <p>
+        Already have an account?
+        <a href="#" onclick="showLoginForm()"> Login</a>
+      </p>
+
+      <h2 id="otp-header" class="hidden">OTP Verification</h2>
+      <form id="otp-form" class="hidden">
+        <input type="text" id="otp-code" placeholder="Enter OTP" required />
+        <button type="submit">Verify OTP</button>
+      </form>
+      <p class="hidden" id="otp-to-signup">
+        <a href="#" onclick="showSignupForm()">Go back to Signup</a>
+      </p>
+
+      <h2 id="login-header" class="hidden">Login</h2>
+      <form id="login-form" class="hidden">
+        <input type="email" id="login-email" placeholder="Email" required />
+        <input
+          type="password"
+          id="login-password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+      <p class="hidden" id="login-to-signup">Don't have an account?
+        <a href="#" onclick="showSignupForm()"> Signup</a>
+      </p>
+    </div>
+
+    <script src="auth.js"></script>
+  </body>
+</html>
